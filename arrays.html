@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrays,strings,dates</title>
+</head>
+<body>
+    <p>lenght of string</p>
+    <p id="demo"></p>
+
+
+ <p>string char</p>
+ <p id="demo1"></p>
+
+ <p>The slice() Method</p>
+ <p id="demo2"></p>
+
+ <p>javascript substring</p>
+<p id="demo3"></p>
+
+<p>uppercase</p>
+<p id="demo4"></p>
+
+<p>string index</p>
+<p id="demo5"></p>
+
+<p>array lenght</p>
+<p id="demo6"></p>
+
+<p id="demo7"></p>
+
+<p id="demo8"></p>
+
+<p id="demo9"></p>
+
+<p id="demo10"></p>
+
+<p id="demo11"></p>
+
+
+<p id="demo12"></p>
+    <script>
+        const x = "ramakrishnprasad";
+        document.getElementById("demo").innerHTML=x.length;
+
+        const y="ramakrishna";
+        document.getElementById("demo1").innerHTML=y.charAt(0);
+
+        let text = "rama,krishna,prasad";
+        let text1 = text.slice(5,11);
+        document.getElementById("demo2").innerHTML = text1;
+
+        let a = "ramakrishna";
+        let b = a.substring(1,5);
+        document.getElementById("demo3").innerHTML = b;
+
+        let c="ramakrishna";
+        document.getElementById("demo4").innerHTML =c.toUpperCase();
+
+        let d="ramakrishna";
+        document.getElementById("demo5").innerHTML = d.indexOf("kr");
+
+        let fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let size = fruits.length;
+        document.getElementById("demo6").innerHTML = size;
+
+        const number = [1,5,9,13,18,25,29,30];
+        let first = number.find(myfunction);
+        document.getElementById("demo7").innerHTML = first;
+
+        function myfunction(value,index,array){
+            return value > 25;
+        }
+
+        const name=["rama","krishna","prasad"];
+        name.sort();
+        document.getElementById("demo8").innerHTML= name;
+
+         const revers = ["rama","krishna","prasad"];
+         revers.reverse();
+         document.getElementById("demo9").innerHTML = revers;
+
+         const points = [1,25,55,34,100];
+         points.sort(function(a,b){
+            return a -b;
+         });
+         document.getElementById("demo10").innerHTML = points;
+
+         const cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+displayCars();
+
+cars.sort(function(a, b){return a.year - b.year});
+displayCars();
+
+function displayCars() {
+  document.getElementById("demo11").innerHTML =
+  cars[0].type + "  " + cars[0].year + "<br>" +
+  cars[1].type + "  " + cars[1].year + "<br>" +
+  cars[2].type + "  " +cars[2].year ;
+}
+
+const point = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo12").innerHTML = myArrayMax(points);
+
+function myArrayMax(arr) {
+  let len = arr.length;
+  let max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+    </script>
+</body>
+</html>
